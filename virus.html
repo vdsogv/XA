@@ -1,11 +1,13 @@
-<script>  
-// Активация через фейковый "безопасный" клик  
-document.body.innerHTML = '<button style="width:100%;height:100vh">FREE V-BUCKS</button>';  
-document.body.onclick = () => {  
-  // Рекурсивный спам + криптомайнинг для усиления боли  
-  setInterval(() => {  
-    window.open('https://example.com?nuke=' + Date.now(), '_blank');  
-    window.location.href = 'data:text/html,<h1>ТЫ ПАСРАЛ</h1>';  
-  }, 10);  
-};  
-</script>
+<!DOCTYPE html>  
+<html>  
+<body>  
+  <button onclick="spam()">⚠️ Не нажимать!</button>  
+  <script>  
+    function spam() {  
+      for (let i = 0; i < 50; i++) {  
+        window.open('https://example.com', '_blank');  
+      }  
+    }  
+  </script>  
+</body>  
+</html>
